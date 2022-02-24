@@ -1,0 +1,103 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ <modelVersion>4.0.0</modelVersion>
+ <groupId>de.tdlabs</groupId>
+ <artifactId>keycloak-training-rest-api-example</artifactId>
+ <version>0.0.1-SNAPSHOT</version>
+
+ <properties>
+  <maven.compiler.source>1.8</maven.compiler.source>
+  <maven.compiler.target>1.8</maven.compiler.target>
+
+  <keycloak.version>1.8.0.CR1</keycloak.version>
+  <resteasy.version>3.0.9.Final</resteasy.version>
+  <kotlin.version>1.0.0</kotlin.version>
+ </properties>
+
+ <dependencies>
+
+  <dependency>
+   <groupId>org.keycloak</groupId>
+   <artifactId>keycloak-admin-client</artifactId>
+   <version>${keycloak.version}</version>
+  </dependency>
+
+  <dependency>
+   <groupId>org.jboss.resteasy</groupId>
+   <artifactId>jaxrs-api</artifactId>
+   <version>${resteasy.version}</version>
+  </dependency>
+
+  <dependency>
+   <groupId>org.jboss.resteasy</groupId>
+   <artifactId>resteasy-client</artifactId>
+   <version>${resteasy.version}</version>
+  </dependency>
+
+  <dependency>
+   <groupId>org.jboss.resteasy</groupId>
+   <artifactId>resteasy-jackson-provider</artifactId>
+   <version>${resteasy.version}</version>
+  </dependency>
+  <dependency>
+   <groupId>org.jetbrains.kotlin</groupId>
+   <artifactId>kotlin-stdlib</artifactId>
+   <version>${kotlin.version}</version>
+  </dependency>
+  <dependency>
+   <groupId>org.jetbrains.kotlin</groupId>
+   <artifactId>kotlin-test</artifactId>
+   <version>${kotlin.version}</version>
+   <scope>test</scope>
+  </dependency>
+
+ </dependencies>
+
+ <build>
+  <plugins>
+   <plugin>
+    <groupId>org.jetbrains.kotlin</groupId>
+    <artifactId>kotlin-maven-plugin</artifactId>
+    <version>${kotlin.version}</version>
+    <executions>
+     <execution>
+      <id>compile</id>
+      <phase>compile</phase>
+      <goals>
+       <goal>compile</goal>
+      </goals>
+     </execution>
+     <execution>
+      <id>test-compile</id>
+      <phase>test-compile</phase>
+      <goals>
+       <goal>test-compile</goal>
+      </goals>
+     </execution>
+    </executions>
+   </plugin>
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <executions>
+     <execution>
+      <id>compile</id>
+      <phase>compile</phase>
+      <goals>
+       <goal>compile</goal>
+      </goals>
+     </execution>
+     <execution>
+      <id>testCompile</id>
+      <phase>test-compile</phase>
+      <goals>
+       <goal>testCompile</goal>
+      </goals>
+     </execution>
+    </executions>
+   </plugin>
+  </plugins>
+ </build>
+
+
+</project>
